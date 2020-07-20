@@ -106,5 +106,37 @@ public class SingleEndedLinkedList {
 		}
 
 	}
+	public void deleteNodeAtPosition(int pos) {
+		if (pos<0) {
+			System.out.println("linked list is empty");
+		} else if (pos==1) {
+			deleteNode();
+		}
+		else if(pos>length) {
+			deleteEnd();
+			
+		}
+		else {
+			int i=1;
+			Node n=start;
+			while(n.link!=null){
+				i++;
+				if(i==pos) {
+					break;
+				}
+				n=n.link;
+			}
+			n.link=n.link.link;
+			length--;
+		}
+		
+	}
+	public void display() {
+		Node n= start;
+		while(n!=null) {
+			System.out.print(n.data + " ");
+		}
+		System.out.println();
+	}
 
 }
