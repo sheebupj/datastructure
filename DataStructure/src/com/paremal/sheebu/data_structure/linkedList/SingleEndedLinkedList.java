@@ -96,6 +96,7 @@ public class SingleEndedLinkedList {
 		} else if (start.link == null) {
 			start = null;
 			length = 0;
+			
 		} else {
 			Node n = start;
 			while (n.link.link != null) {
