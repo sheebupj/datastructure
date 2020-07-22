@@ -98,7 +98,7 @@ public class SingleEndedLinkedList {
 			length = 0;
 		} else {
 			Node n = start;
-			while (n.link.link == null) {
+			while (n.link.link != null) {
 				n = n.link;
 			}
 			n.link = null;
@@ -135,8 +135,28 @@ public class SingleEndedLinkedList {
 		Node n= start;
 		while(n!=null) {
 			System.out.print(n.data + " ");
+			n=n.link;
 		}
 		System.out.println();
+	}
+	public static void main(String[] args) {
+		SingleEndedLinkedList sl = new SingleEndedLinkedList();
+
+		sl.insertItem(10);
+		sl.insertItem(20);
+		sl.insertItem(30);
+		sl.insertItem(40);
+		
+		sl.insertAtPos(60,5);
+		sl.insertAtPos(5,5);
+
+		sl.display();
+		sl.deleteNode();;
+		sl.display();
+		sl.deleteEnd();
+		sl.display();
+		sl.deleteNodeAtPosition(2);
+		sl.display();
 	}
 
 }
