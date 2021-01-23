@@ -51,8 +51,8 @@ class Combination {
     /* function to check for above function*/
     public static void main (String[] args) { 
         int arr[] = {2, 4, 1, 5, 6,3,7,8}; 
-        int k=9;
-        int r = 3; 
+        int k=100;
+        int r = 7; 
         int n = arr.length; 
         printCombi(arr, n, r,k); 
     } 
