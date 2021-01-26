@@ -2,9 +2,9 @@ package com.paremal.sheebu.algorithms;
 
 public class TwoDhourGlass {
 	
-	public static int calculateMaxHourGlass(int[][] arr) {
+	public static int calculateMaxHourGlass(int[][] sample) {
 		
-		int[][] sample= {{9,9,9,5,9,4},{9,5,9,7,9,3},{7,8,9,2,9,1},{1,2,3,5,9,6},{7,8,9,2,9,5},{7,8,9,2,9,5}};
+		
 		System.out.println(sample[0].length);
 		//int[ ] start= {0,1};
 		int max=0;
@@ -22,7 +22,8 @@ public class TwoDhourGlass {
 	}
 	
 	public static void main(String[] args) {
-		calculateMaxHourGlass(null);
+		int[][] arrNos= {{9,9,9,5,9,4},{9,5,9,7,9,3},{7,8,9,2,9,1},{1,2,3,5,9,6},{7,8,9,2,9,5},{7,8,9,2,9,5}};
+		calculateMaxHourGlass(arrNos);
 	}
 	static int getHourglass(int[] leftTop, int[][] arr) {
 		int x= leftTop[0];
