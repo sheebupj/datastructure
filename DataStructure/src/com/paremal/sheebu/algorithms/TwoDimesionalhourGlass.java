@@ -6,8 +6,7 @@ package com.paremal.sheebu.algorithms;
  * 
  * 	in following 2 dimensional array
  * 1 2 3							1 2 3
- * 4 5 6   hour glass will become 	  5       sum is 35
- * 7 8 9							7 8 9
+ * 4 5 6   hour glass will become 	  5       sum is 35 
  * 
  * 1
  */
