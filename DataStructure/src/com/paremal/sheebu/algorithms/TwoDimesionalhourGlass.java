@@ -11,6 +11,7 @@ package com.paremal.sheebu.algorithms;
  * 1
  */
 
+
 public class TwoDimesionalhourGlass {
 	
 	
