@@ -1,5 +1,17 @@
 package com.paremal.sheebu.algorithms;
 
+/*
+ * iterate through two dimensional array for possible 3x3 arrays for max valued hour glass
+ * from 6X6 2 D Array
+ * 
+ * 	in following 2 dimensional array
+ * 1 2 3							1 2 3
+ * 4 5 6   hour glass will become 	  5       sum is 35
+ * 7 8 9							7 8 9
+ * 
+ * 1
+ */
+
 public class TwoDimesionalhourGlass {
 	
 	
@@ -17,7 +29,7 @@ public class TwoDimesionalhourGlass {
 				{7,8,9,2,9,5}
 				};
 		int sum=calculateMaxHourGlass(arrNos);
-		System.out.println("sum:"+sum);
+		System.out.println(" max of sum:"+sum);
 	}
 	
 /*
@@ -25,7 +37,7 @@ public class TwoDimesionalhourGlass {
  * 
  * 	in following 2 dimensional array
  * 1 2 3							1 2 3
- * 4 5 6   hour glass will become 	  5
+ * 4 5 6   hour glass will become 	  5       sum is 35
  * 7 8 9							7 8 9
  * 
  * 1
