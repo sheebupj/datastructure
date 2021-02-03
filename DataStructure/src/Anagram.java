@@ -1,12 +1,23 @@
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * 
+ * @author Sheebu PJ sheebupj@gmail.com
+ *
+ */
 public class Anagram {
 	
+	/**
+	 * method to check two string is anagram or not
+	 * @param str1
+	 * @param str2
+	 * @return
+	 */
 	public static boolean checkAnagram(String str1,String str2) {
 		
 		if(str1.length()!=str2.length()) return false;
+		
 		if(str1.equals(str2)) {
 			return false;
 		}
@@ -21,6 +32,10 @@ public class Anagram {
 		
 	}
 	
+	/**
+	 * joining list of words comma separated
+	 * @param wordList
+	 */
 	public static void joiningTheListComaSeperated(List<String> wordList) {
 		
 		System.out.println(wordList.stream().collect(Collectors.joining(", ")));
