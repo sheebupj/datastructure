@@ -51,6 +51,7 @@ public class Anagram {
 		
 		joiningTheListComaSeperated(Arrays.asList("dog","god","army","marry"));
 		
+		
 	}
 	
 	
