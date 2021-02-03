@@ -1,5 +1,7 @@
 package com.paremal.sheebu.algorithms;
 
+import java.util.Scanner;
+
 /*
  * iterate through two dimensional array for possible 3x3 arrays for max valued hour glass
  * from 6X6 2 D Array
@@ -17,6 +19,21 @@ public class TwoDimesionalhourGlass {
 	
 	
 	public static void main(String[] args) {
+		
+		Scanner sc=new Scanner(System.in);
+        System.out.println("================================");
+        String[] s1= new String[3];
+        int[] x= new int[3];
+        for(int i=0;i<1;i++)
+        {
+             s1[i]=sc.next();
+             x[i]=sc.nextInt();
+            //Complete this line
+        }
+        System.out.println(s1[0]+" "+x[0]);
+        // Write your code here.
+
+       
 		/*
 		 * initializing 6x6 two dimensional array
 		 */
