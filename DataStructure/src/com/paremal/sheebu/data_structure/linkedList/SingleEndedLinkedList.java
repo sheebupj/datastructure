@@ -2,36 +2,42 @@ package com.paremal.sheebu.data_structure.linkedList;
 
 class Node {
 	int data;
-	Node link;
+	Node next;
 
 	public Node(int data) {
 		super();
 		this.data = data;
-		this.link = null;
+		this.next = null;
 	}
+
+	@Override
+	public String toString() {
+		return "Node [data=" + data ;
+	}
+	
 
 }
 
 public class SingleEndedLinkedList {
 
-	private Node start;
+	private Node head;
 	private int length;
 
 	public SingleEndedLinkedList() {
 		super();
 		// TODO Auto-generated constructor stub
-		this.start = null;
+		this.head = null;
 		this.length = 0;
 	}
 
 	public void insertItem(int dta) {
 
 		Node newNode = new Node(dta);
-		if (start == null) {
-			start = newNode;
+		if (head == null) {
+			head = newNode;
 		} else {
-			newNode.link = start;
-			start = newNode;
+			newNode.next = head;
+			head = newNode;
 		}
 
 		length++;
@@ -40,16 +46,16 @@ public class SingleEndedLinkedList {
 
 	public void insertEnd(int data) {
 		Node newNode = new Node(data);
-		if (start == null) {
-			start = newNode;
+		if (head == null) {
+			head = newNode;
 
 		} else {
-			Node n = start;
-			while (n.link != null) {
-				n = n.link;
+			Node n = head;
+			while (n.next != null) {
+				n = n.next;
 			}
 
-			n.link = newNode;
+			n.next = newNode;
 
 		}
 		length++;
@@ -65,44 +71,44 @@ public class SingleEndedLinkedList {
 		} else if (pos > length) {
 			insertEnd(data);
 		} else {
-			Node n = start;
+			Node n = head;
 			int i = 1;
-			while (n.link != null) {
+			while (n.next != null) {
 				i++;
 				if (i == pos) {
 					break;
 				}
-				n = n.link;
+				n = n.next;
 			}
 			Node newNode = new Node(data);
-			newNode.link = n.link;
-			n.link = newNode;
+			newNode.next = n.next;
+			n.next = newNode;
 
 		}
 	}
 
 	public void deleteNode() {
-		if (start == null) {
+		if (head == null) {
 			System.out.println("linked list is empty");
 		} else {
-			start = start.link;
+			head = head.next;
 			length--;
 		}
 	}
 
 	public void deleteEnd() {
-		if (start == null) {
+		if (head == null) {
 			System.out.println("linked list is empty");
-		} else if (start.link == null) {
-			start = null;
+		} else if (head.next == null) {
+			head = null;
 			length = 0;
 			
 		} else {
-			Node n = start;
-			while (n.link.link != null) {
-				n = n.link;
+			Node n = head;
+			while (n.next.next != null) {
+				n = n.next;
 			}
-			n.link = null;
+			n.next = null;
 			length--;
 		}
 
@@ -119,24 +125,24 @@ public class SingleEndedLinkedList {
 		}
 		else {
 			int i=1;
-			Node n=start;
-			while(n.link!=null){
+			Node n=head;
+			while(n.next!=null){
 				i++;
 				if(i==pos) {
 					break;
 				}
-				n=n.link;
+				n=n.next;
 			}
-			n.link=n.link.link;
+			n.next=n.next.next;
 			length--;
 		}
 		
 	}
 	public void display() {
-		Node n= start;
+		Node n= head;
 		while(n!=null) {
 			System.out.print(n.data + " ");
-			n=n.link;
+			n=n.next;
 		}
 		System.out.println();
 	}
