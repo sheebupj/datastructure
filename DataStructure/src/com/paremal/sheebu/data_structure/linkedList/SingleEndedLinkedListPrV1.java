@@ -37,6 +37,10 @@ public class SingleEndedLinkedListPrV1 {
 			head=nde;
 			return;
 		}
+		if(position==1) {
+			addFirst(nde);
+			return;
+		}
 		Node n=head;
 		Node previous=n;
 		for(int p=1;p<position;p++) {
@@ -88,6 +92,10 @@ public class SingleEndedLinkedListPrV1 {
 			System.out.println("linedList is empty");
 			
 		}
+		if(pos==1) {
+			removeFirst();
+			return;
+		}
 		Node n=head;
 		Node previous=n;
 		for(int p=1;p<pos;p++) {
@@ -138,7 +146,9 @@ public class SingleEndedLinkedListPrV1 {
 		sll.addAtPosition(2, n6);
 		sll.addAtPosition(3, n5);
 		sll.display();
-		sll.removeAtPosition(5);
+		sll.removeAtPosition(1);
+		sll.display();
+		sll.addAtPosition(1, n1);
 		sll.display();
 		
 		
