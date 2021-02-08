@@ -64,6 +64,7 @@ public class DoublyLinkedList {
 		}
 		this.length++;
 	}
+	
 	/**
 	 * print content of nodes in order
 	 */
@@ -78,6 +79,7 @@ public class DoublyLinkedList {
 		
 		
 	}
+	
 	/**
 	 * print content of nodes in reverse  order
 	 */
