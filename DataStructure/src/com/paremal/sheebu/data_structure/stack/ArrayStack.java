@@ -88,6 +88,7 @@ public class ArrayStack<E> implements Stack<E> {
 		}
 		E e=data[t];
 		data[t]=null;
+		t--;
 		return e;
 	}
 
