@@ -1,30 +1,59 @@
 package com.paremal.sheebu.algorithms;
 
 public class SelectionSort {
-	
-	int[] selectionSort(int[] array) {
-		for(int i=0;i<array.length;i++) {
-			int index=i;
-			for(int j=i+1;j<array.length;j++) {
-				if(array[index]>array[j]) {
-					index=j;
-				}
-			}
-			int temp=array[index];
-			array[index]=array[i];
-			array[i]=temp;
-		}
-	return array;
-	}
-	public static void main(String[] args) {
-		int[] a= {8,-6,-9,2,5};
-		SelectionSort selsort= new SelectionSort();
-		a=selsort.selectionSort(a);
-		for(int n:a) {
-			System.out.println(n);
-		}
-	}
-	
-	
 
+    int[] selectionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            int index = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[index] > array[j]) {
+                    index = j;
+                }
+            }
+            int temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
+        }
+        return array;
+    }
+
+    public static void main(String[] args) {
+        int[] a = {5, 4, 3, 2, 1, 0, -1, -2,8};
+        SelectionSort selsort = new SelectionSort();
+        a = selsort.insertionSort(a,a.length);
+        for (int n : a) {
+            System.out.println(n);
+        }
+    }
+
+    int[] selsrt(int[] arr) {
+        for(int i=0;i<arr.length-1;i++){
+            int selection=i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[selection]> arr[j]){
+                    selection=j;
+                }
+            }
+            int temp=arr[selection];
+            arr[selection]=arr[i];
+            arr[i]=temp;
+        }
+    return arr;
+    }
+    int[] insertionSort(int[] arr,int n){
+        int i, key, j;
+        for(i=1;i<n;i++){
+            key=arr[i];
+            j=i-1;
+            while(j>=0&& arr[j]>key){
+                arr[j+1]=arr[j];
+                j=j-1;
+            }
+            arr[j+1]=key;
+        }
+        return arr;
+    }
 }
+
+
+
