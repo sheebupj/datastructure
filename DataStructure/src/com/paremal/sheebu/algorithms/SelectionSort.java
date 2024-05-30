@@ -24,7 +24,7 @@ public class SelectionSort {
         SelectionSort selsort = new SelectionSort();
         int[] insertSorted = selsort.insertionSort(a, a.length);
         Arrays.stream(insertSorted).forEach(System.out::println);
-        int[] selectiontSorted = selsort.insertionSort(a, a.length);
+        int[] selectiontSorted = selsort.selectionSort(a);
         Arrays.stream(selectiontSorted).forEach(System.out::println);
 
     }
