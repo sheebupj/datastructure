@@ -1,5 +1,7 @@
 package com.paremal.sheebu.algorithms;
 
+import java.util.Arrays;
+
 public class SelectionSort {
 
     int[] selectionSort(int[] array) {
@@ -18,38 +20,40 @@ public class SelectionSort {
     }
 
     public static void main(String[] args) {
-        int[] a = {5, 4, 3, 2, 1, 0, -1, -2,8};
+        int[] a = {5, 4, 3, 2, 1, 0, -1, -2, 8};
         SelectionSort selsort = new SelectionSort();
-        a = selsort.insertionSort(a,a.length);
-        for (int n : a) {
-            System.out.println(n);
-        }
+        int[] insertSorted = selsort.insertionSort(a, a.length);
+        Arrays.stream(insertSorted).forEach(System.out::println);
+        int[] selectiontSorted = selsort.insertionSort(a, a.length);
+        Arrays.stream(selectiontSorted).forEach(System.out::println);
+
     }
 
     int[] selsrt(int[] arr) {
-        for(int i=0;i<arr.length-1;i++){
-            int selection=i;
-            for(int j=i+1;j<arr.length;j++){
-                if(arr[selection]> arr[j]){
-                    selection=j;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int selection = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[selection] > arr[j]) {
+                    selection = j;
                 }
             }
-            int temp=arr[selection];
-            arr[selection]=arr[i];
-            arr[i]=temp;
+            int temp = arr[selection];
+            arr[selection] = arr[i];
+            arr[i] = temp;
         }
-    return arr;
+        return arr;
     }
-    int[] insertionSort(int[] arr,int n){
+
+    int[] insertionSort(int[] arr, int n) {
         int i, key, j;
-        for(i=1;i<n;i++){
-            key=arr[i];
-            j=i-1;
-            while(j>=0&& arr[j]>key){
-                arr[j+1]=arr[j];
-                j=j-1;
+        for (i = 1; i < n; i++) {
+            key = arr[i];
+            j = i - 1;
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
             }
-            arr[j+1]=key;
+            arr[j + 1] = key;
         }
         return arr;
     }
