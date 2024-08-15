@@ -3,6 +3,7 @@ package com.paremal.sheebu.algorithms;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class PrintDuplicateCharFromWord {
@@ -18,12 +19,12 @@ public class PrintDuplicateCharFromWord {
                 stringIntegerMap.put(s, 1);
             }
         }
-        for (Map.Entry entry : stringIntegerMap.entrySet()) {
-            if ((Integer) entry.getValue() > 1) {
-                System.out.println("duplicate char:" + entry.getKey());
-            }
-        }
+
         stringIntegerMap.entrySet().stream().filter(entry-> entry.getValue()>1).forEach(System.out::println);
+    }
+    public static void printDuplicateFromStringJava8(String str) {
+        Map<String,Integer>  stringIntegerMap=Arrays.stream(str.split("")).collect(Collectors.toMap(Function.identity(),v->1,Integer::sum));
+        stringIntegerMap.entrySet().stream().filter(m-> m.getValue()>1).forEach(set->System.out.println("Duplicate "+set.getKey()+" Frequency:"+set.getValue()));
     }
     public static Boolean printWheatherAnagramOfNot(String word1,String word2){
         if(word1.length()!=word2.length()){
@@ -40,7 +41,7 @@ public class PrintDuplicateCharFromWord {
 
     public static void main(String[] args) {
         String str = "abcafcb";
-        printDuplicateFromString(str);
+        printDuplicateFromStringJava8(str);
 
         System.out.println(" 'dog' 'dog'  anagram=" + printWheatherAnagramOfNot("dog", "dog"));
         System.out.println(" 'god' 'dog' anagram=" + printWheatherAnagramOfNot("god", "dog"));
