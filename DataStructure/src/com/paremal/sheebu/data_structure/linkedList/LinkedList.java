@@ -1,6 +1,6 @@
 package com.paremal.sheebu.data_structure.linkedList;
 
-public class LinkedList1 {
+public class LinkedList {
     Node first;
     Node last;
 
@@ -102,22 +102,23 @@ public class LinkedList1 {
 
     }
     public static void main(String[] args) {
-        LinkedList1 linkedList1 = new LinkedList1();
-        linkedList1.deleteFirstNode();
-        linkedList1.insertAt(1,8);
-        linkedList1.add(1);
-        linkedList1.add(9);
-        linkedList1.add(0);
-        linkedList1.insertAtBeginning(100);
-        linkedList1.insertAt(2, 2);
-        linkedList1.insertAt(3, 3);
-        linkedList1.insertAt(10, 6);
-        linkedList1.printNodes();
-        linkedList1.deleteFirstNode();
-        linkedList1.printNodes();
-        linkedList1.deleteAtPosition(1);
-        linkedList1.printNodes();
-        linkedList1.deleteAtPosition(5);
-        linkedList1.printNodes();
+        LinkedList list = new LinkedList();
+        list.deleteFirstNode();
+        list.insertAt(1,8);
+        list.add(1);
+        list.add(9);
+        list.add(0);
+        list.insertAtBeginning(100);
+        list.insertAt(2, 2);
+        list.insertAt(3, 3);
+        list.insertAt(10, 6);
+        list.printNodes();
+        list.deleteFirstNode();
+        list.printNodes();
+        list.deleteAtPosition(1);
+        list.printNodes();
+        list.deleteAtPosition(5);
+        list.printNodes();
     }
 }
+
