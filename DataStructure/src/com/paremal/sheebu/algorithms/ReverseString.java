@@ -26,7 +26,8 @@ public class ReverseString {
 
        return IntStream.iterate(str.length()-1,i-> i>=0,i->i=i-1)
                .boxed()
-               .map(str::charAt).map(String::valueOf)
+               .map(str::charAt)
+               .map(String::valueOf)
                .collect(Collectors.joining());
     }
 }
