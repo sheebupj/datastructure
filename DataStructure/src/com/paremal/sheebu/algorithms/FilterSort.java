@@ -1,5 +1,7 @@
 package com.paremal.sheebu.algorithms;
 
+import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -30,11 +32,12 @@ public class FilterSort {
      */
     String filterBasedOn1partSortBased2part(String[] strArray){
         Optional<Map.Entry<String,Long>> optME=Stream.of(strArray)
-                .map(str-> str.split("[//,]"))
+                .map(str-> str.split(","))
                 .filter(sArr-> sArr[0].length()>4 )
                 .collect(Collectors
-                        .toMap(sArr-> sArr[0], sArr-> Long.valueOf(sArr[1])))
-                .entrySet().stream().skip(1).findFirst();
+                        .toMap(sArr-> sArr[0], sArr-> Long.valueOf(sArr[1]),(me1,me2)-> me1, LinkedHashMap::new))
+                .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .skip(1).findFirst();
         return optME.isPresent() ? optME.get().getKey():"";
     }
 }
