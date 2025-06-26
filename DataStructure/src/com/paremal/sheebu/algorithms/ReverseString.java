@@ -52,7 +52,7 @@ public class ReverseString {
     /*
      Reverse each word in a line  without using java built in method reverse(in StringBuilder)
      using stream api and method reference
-     abcd become dcba
+     abcd efg hij become dcba gfe jih
       */
     public String reverseEachWords(String strLine) {
         String[] strArray = strLine.split(" ");
@@ -66,7 +66,7 @@ public class ReverseString {
     /*
      Reverse each word in a line  without using java built in method reverse(in StringBuilder)
      using stream api in one method pipeline
-     abcd become dcba
+     bcd efg hij become dcba gfe jih
       */
     public String reverseEachWordsInALine(String line) {
         String[] strArray = line.split(" ");
