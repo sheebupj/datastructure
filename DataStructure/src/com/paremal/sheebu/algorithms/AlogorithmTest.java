@@ -12,13 +12,13 @@ public class AlogorithmTest {
         String numberString = "0123456789";
         String numberString1 = "012 345 6789";
         String reversed1 = reverseString.reverseWithoutInbuiltIn(numberString);
-        Assert.assertEquals(reversed1,"9876543210");
+        Assert.assertEquals("9876543210",reversed1);
         String reversed2 = reverseString.reverseWithoutInbuiltInUsingStreamApi(numberString);
-        Assert.assertEquals(reversed2,"9876543210");
+        Assert.assertEquals("9876543210",reversed2);
         String reversed3 = reverseString.reverseEachWords(numberString1);
-        Assert.assertEquals(reversed3,"210 543 9876 ");
+        Assert.assertEquals("210 543 9876 ",reversed3);
         String reversed4 = reverseString.reverseEachWordsInALine(numberString1);
-        Assert.assertEquals(reversed4,"210 543 9876 ");
+        Assert.assertEquals("210 543 9876 ",reversed4);
 
     }
     @Test
@@ -29,8 +29,6 @@ public class AlogorithmTest {
         String actual= filterSort.filterBasedOn1partSortBased2part(strArray);
         String actual1= filterSort.filterBasedOn1partSortBased2part(strArray1);
         Assert.assertEquals("QWERTY",actual);
-        System.out.println(actual1);
-
         Assert.assertEquals("VIEWS",actual1);
 
 
