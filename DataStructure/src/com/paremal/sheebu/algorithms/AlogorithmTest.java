@@ -3,7 +3,9 @@ package com.paremal.sheebu.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public class AlogorithmTest {
@@ -50,15 +52,60 @@ public class AlogorithmTest {
         int[] result4 = ClosestZeroInArray.findClosestToZeroUsingStreamApi(data1);
         Assert.assertArrayEquals(new int[]{-1, 0}, result4);
     }
+
     @Test
-    public void findIndexesTest(){
-        String str="sheebu";
-        Optional<List<Integer>> optIndexes=FindSubStringIndexesInA_String.findIndexes(str,"e");
-        List<Integer>  indexes=List.of(2,3);
+    public void findIndexesTest() {
+        String str = "sheebu";
+        Optional<List<Integer>> optIndexes = FindSubStringIndexesInA_String.findIndexes(str, "e");
+        List<Integer> indexes = List.of(2, 3);
 
         Assert.assertEquals(indexes, optIndexes.get());
-        Optional<List<Integer>> optIndexes1=FindSubStringIndexesInA_String.findIndexes(str,"z");
+        Optional<List<Integer>> optIndexes1 = FindSubStringIndexesInA_String.findIndexes(str, "z");
         Assert.assertEquals(Optional.empty(), optIndexes1);
 
+    }
+
+    @Test
+    public void NumberOfNotesFromAmtTest() {
+        Integer amount = 2888;
+        Map<Integer, Integer> notesMap = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(2888);
+        Assert.assertArrayEquals(getepectedNotesMap().entrySet().toArray(), notesMap.entrySet().toArray());
+        Map<Integer, Integer> notesMapWithStream = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(2888);
+        Assert.assertArrayEquals(getepectedNotesMap().entrySet().toArray(), notesMapWithStream.entrySet().toArray());
+        Map<Integer, Integer> notesMap1 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(5888);
+        Assert.assertArrayEquals(getepectedNotesMap1().entrySet().toArray(), notesMap1.entrySet().toArray());
+        Map<Integer, Integer> notesMap1Stream = NumberOfNotesFromAmt.getNumberOfNotesFrAmtStream(5888);
+        Assert.assertArrayEquals(getepectedNotesMap1().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
+
+    }
+
+    private static Map<Integer, Integer> getepectedNotesMap() {
+        Map<Integer, Integer> expected = new LinkedHashMap<>();
+        expected.put(2000, 1);
+        expected.put(500, 1);
+        expected.put(200, 1);
+        expected.put(100, 1);
+        expected.put(50, 1);
+        expected.put(20, 1);
+        expected.put(10, 1);
+        expected.put(5, 1);
+        expected.put(2, 1);
+        expected.put(1, 1);
+        return expected;
+    }
+
+    private static Map<Integer, Integer> getepectedNotesMap1() {
+        Map<Integer, Integer> expected = new LinkedHashMap<>();
+        expected.put(2000, 2);
+        expected.put(500, 3);
+        expected.put(200, 1);
+        expected.put(100, 1);
+        expected.put(50, 1);
+        expected.put(20, 1);
+        expected.put(10, 1);
+        expected.put(5, 1);
+        expected.put(2, 1);
+        expected.put(1, 1);
+        return expected;
     }
 }
