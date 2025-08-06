@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CountNotesFromAmout {
+public class CountNotesFromAmount {
 
     public static void main(String[] args) {
         getNoteCountFromAmount(2888).entrySet()
