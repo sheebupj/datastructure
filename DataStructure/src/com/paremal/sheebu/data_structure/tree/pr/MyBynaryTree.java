@@ -1,8 +1,6 @@
 package com.paremal.sheebu.data_structure.tree.pr;
 
 
-import com.paremal.sheebu.data_structure.tree.BinaryTree;
-
 class Node{
     int key;
     Node left,right;
