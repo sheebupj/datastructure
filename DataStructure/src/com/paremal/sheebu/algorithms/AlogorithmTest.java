@@ -78,6 +78,35 @@ public class AlogorithmTest {
         Assert.assertArrayEquals(getepectedNotesMap1().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
 
     }
+    @Test
+    public void checkBalancedWithStackTest(){
+        String line="()";
+        String line_=")(";
+        String line2="([])";
+        String line2_="([)]";
+        String line4="()([])";
+        String line5="()([]){([])}";
+        String line4_="))([])";
+        String line5_="()([])}([])}";
+
+        boolean actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
+        Assert.assertEquals(true,actual);
+        boolean actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
+        Assert.assertEquals(false,actual1);
+        boolean actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
+        Assert.assertEquals(true,actual2);
+        boolean actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
+        Assert.assertEquals(false,actual3);
+        boolean actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
+        Assert.assertEquals(true,actual4);
+        boolean actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
+        Assert.assertEquals(true,actual5);
+        boolean actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
+        Assert.assertEquals(false,actual4_);
+        boolean actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
+        Assert.assertEquals(false,actual5_);
+
+    }
 
     private static Map<Integer, Integer> getepectedNotesMap() {
         Map<Integer, Integer> expected = new LinkedHashMap<>();
@@ -108,4 +137,5 @@ public class AlogorithmTest {
         expected.put(1, 1);
         return expected;
     }
+
 }
