@@ -22,10 +22,12 @@ public class CheckOpeningClosingBracketsBalanced {
     }
 
     /*
-    method for checking parenthesis are balanced in the string
-    when opening parenthesis are coming it is pushed to stack
-    when closing one come get the previous opening from stack and
-    check the one get from opening value stack is the matching for current closing parenthesis
+    Method for checking parenthesis are balanced in a String
+
+    Iterate through String for each letter
+    when closing encountered then pop previous opening braces from stack
+    then check opening and closing belong to same type
+
      */
     static String checkBalancedWithStack(String line) {
         List<String> inputs = Stream.of(line.trim().split("")).collect(Collectors.toList());
