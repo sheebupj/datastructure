@@ -14,21 +14,15 @@ public class CheckOpeningClosingBracketsBalanced {
     public static void main(String[] argh) {
 
         Scanner sc = new Scanner(System.in);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String line="";
-        try {
-             line=reader.readLine();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.println(checkBalancedWithStack(line));
+        reader.lines().map(CheckOpeningClosingBracketsBalanced::checkBalancedWithStack).forEach(System.out::println);
 
 
     }
 
 
-    static boolean checkBalancedWithStack(String line) {
+    static String checkBalancedWithStack(String line) {
         List<String> inputs = Stream.of(line.trim().split("")).collect(Collectors.toList());
         List<String> openingList=new ArrayList<>();
         List<String> closingList=new ArrayList<>();
@@ -48,16 +42,21 @@ public class CheckOpeningClosingBracketsBalanced {
                 if(!openingValueStack.isEmpty()) {
                     String stackInverted = openingClosing.get(openingValueStack.pop());
                     if (!ch.equals(stackInverted)) {
-                        return false;
+                        return "false";
                     }
                 }
                 else {
-                    return false;
+                    return "false";
                 }
             }
         }
 
-        return openingValueStack.isEmpty();
+        if( openingValueStack.isEmpty()){
+            return "true";
+        }
+        else{
+            return "false";
+        }
     }
 }
 
