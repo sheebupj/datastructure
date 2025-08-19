@@ -89,22 +89,22 @@ public class AlogorithmTest {
         String line4_="))([])";
         String line5_="()([])}([])}";
 
-        boolean actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
-        Assert.assertEquals(true,actual);
-        boolean actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
-        Assert.assertEquals(false,actual1);
-        boolean actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
-        Assert.assertEquals(true,actual2);
-        boolean actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
-        Assert.assertEquals(false,actual3);
-        boolean actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
-        Assert.assertEquals(true,actual4);
-        boolean actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
-        Assert.assertEquals(true,actual5);
-        boolean actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
-        Assert.assertEquals(false,actual4_);
-        boolean actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
-        Assert.assertEquals(false,actual5_);
+        String actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
+        Assert.assertEquals("true",actual);
+        String actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
+        Assert.assertEquals("false",actual1);
+        String actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
+        Assert.assertEquals("true",actual2);
+        String actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
+        Assert.assertEquals("false",actual3);
+        String actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
+        Assert.assertEquals("true",actual4);
+        String actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
+        Assert.assertEquals("true",actual5);
+        String actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
+        Assert.assertEquals("false",actual4_);
+        String actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
+        Assert.assertEquals("false",actual5_);
 
     }
 
