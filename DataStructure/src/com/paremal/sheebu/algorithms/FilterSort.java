@@ -35,7 +35,8 @@ public class FilterSort {
                 .map(str-> str.split(","))
                 .filter(sArr-> sArr[0].length()>4 )
                 .collect(Collectors
-                        .toMap(sArr-> sArr[0], sArr-> Long.valueOf(sArr[1]),(me1,me2)-> me1, LinkedHashMap::new))
+                        .toMap(sArr-> sArr[0], sArr-> Long.valueOf(sArr[1]),
+                                (me1,me2)-> me1, LinkedHashMap::new))
                 .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .skip(1).findFirst();
         return optME.isPresent() ? optME.get().getKey():"";
