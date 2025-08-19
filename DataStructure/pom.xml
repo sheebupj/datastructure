@@ -4,8 +4,16 @@
 	<groupId>com.paremal.sheebu.dataStructure</groupId>
 	<artifactId>queue_simple</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	<build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
@@ -14,6 +22,14 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>9</source>
+					<target>9</target>
 				</configuration>
 			</plugin>
 		</plugins>
