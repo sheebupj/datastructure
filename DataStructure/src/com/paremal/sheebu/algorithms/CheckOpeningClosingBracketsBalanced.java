@@ -31,14 +31,8 @@ public class CheckOpeningClosingBracketsBalanced {
      */
     static String checkBalancedWithStack(String line) {
         List<String> inputs = Stream.of(line.trim().split("")).collect(Collectors.toList());
-        List<String> openingList=new ArrayList<>();
-        List<String> closingList=new ArrayList<>();
-
-        // store opening parenthesis
-        openingList=List.of("(","{","[");
-
-        //store closing parenthesis
-        closingList=List.of(")","}","]");
+        List<String> openingList=List.of("(","{","[");
+        List<String> closingList=List.of(")","}","]");
 
         // map for getting closing parenthesis using opening parenthesis
         Map<String,String> openingClosing= new HashMap<>();
@@ -56,8 +50,8 @@ public class CheckOpeningClosingBracketsBalanced {
             // and get the matching closing parenthesis from map check it is correct
             else if (closingList.contains(ch)){
                 if(!openingValueStack.isEmpty()) {
-                    String stackInverted = openingClosing.get(openingValueStack.pop());
-                    if (!ch.equals(stackInverted)) {
+                    String Closing = openingClosing.get(openingValueStack.pop());
+                    if (!ch.equals(Closing)) {
                         return "false";
                     }
                 }
