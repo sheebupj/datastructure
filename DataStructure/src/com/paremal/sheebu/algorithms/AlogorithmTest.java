@@ -80,14 +80,14 @@ public class AlogorithmTest {
     }
     @Test
     public void checkBalancedWithStackTest(){
-        String line="()";
-        String line_=")(";
-        String line2="([])";
-        String line2_="([)]";
-        String line4="()([])";
-        String line5="()([]){([])}";
-        String line4_="))([])";
-        String line5_="()([])}([])}";
+        String line="()";//true
+        String line_=")(";//false
+        String line2="([])";//true
+        String line2_="([)]";//false
+        String line4="()([])";//true
+        String line5="()([]){([])}";//true
+        String line4_="))([])";//false
+        String line5_="()([])}([])}";//false
 
         String actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
         Assert.assertEquals("true",actual);
