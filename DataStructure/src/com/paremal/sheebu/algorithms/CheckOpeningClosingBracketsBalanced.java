@@ -40,7 +40,7 @@ public class CheckOpeningClosingBracketsBalanced {
         openingClosing.put("{","}");
         openingClosing.put("[","]");
       
-        Stack openingValueStack = new Stack(inputs.size());
+        Stack<String> openingValueStack = new Stack<>(inputs.size());
         for(String ch:inputs){
             // if letter is opening ([{ pushed to stack
             if(openingList.contains(ch)){
@@ -75,22 +75,22 @@ public class CheckOpeningClosingBracketsBalanced {
 
 
 
-class Stack {
-    String[] arr;
+class Stack <E>{
+    E[] arr;
     int top = -1;
 
     public Stack(int capacity) {
-        arr = new String[capacity];
+       arr = (E[]) new Object[capacity];
     }
 
     int size() {
         return arr.length;
     }
-    void push(String str) {
+    void push(E str) {
         arr[++top] = str;
     }
 
-    String pop() {
+    E pop() {
         return arr[top--];
     }
     boolean isEmpty(){return top==-1;}
