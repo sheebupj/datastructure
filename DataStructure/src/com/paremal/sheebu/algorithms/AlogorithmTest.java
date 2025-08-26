@@ -93,28 +93,30 @@ public class AlogorithmTest {
         String line6="()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//true
         String line6_=")()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
 
-        String actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
-        Assert.assertEquals("true",actual);
-        String actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
-        Assert.assertEquals("false",actual1);
-        String actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
-        Assert.assertEquals("true",actual2);
-        String actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
-        Assert.assertEquals("false",actual4_);
-        String actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
-        Assert.assertEquals("true",actual4);
-        String actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
-        Assert.assertEquals("true",actual5);
-        String actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3);
-        Assert.assertEquals("true",actual3);
-        String actual3_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3_);
-        Assert.assertEquals("false",actual3_);
-        String actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
-        Assert.assertEquals("false",actual5_);
-        String actual6=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6);
-        Assert.assertEquals("true",actual6);
-        String actual6_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6_);
-        Assert.assertEquals("false",actual6_);
+        boolean actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
+        Assert.assertTrue(actual);
+        boolean actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
+        Assert.assertFalse(actual1);
+        boolean actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
+        Assert.assertTrue(actual2);
+        boolean actual2_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
+        Assert.assertFalse(actual2_);
+        boolean actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
+        Assert.assertTrue(actual4);
+        boolean actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
+        Assert.assertFalse(actual4_);
+        boolean actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
+        Assert.assertTrue(actual5);
+        boolean actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3);
+        Assert.assertTrue(actual3);
+        boolean actual3_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3_);
+        Assert.assertFalse(actual3_);
+        boolean actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
+        Assert.assertFalse(actual5_);
+        boolean actual6=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6);
+        Assert.assertTrue(actual6);
+        boolean actual6_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6_);
+        Assert.assertFalse(actual6_);
     }
 
     private static Map<Integer, Integer> getepectedNotesMap() {
