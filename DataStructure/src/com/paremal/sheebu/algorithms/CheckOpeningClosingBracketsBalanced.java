@@ -29,7 +29,7 @@ public class CheckOpeningClosingBracketsBalanced {
     then check opening and closing belong to same type
 
      */
-    static String checkBalancedWithStack(String line) {
+    static boolean checkBalancedWithStack(String line) {
         List<String> inputs = Stream.of(line.trim().split("")).collect(Collectors.toList());
         List<String> openingList=List.of("(","{","[");
         List<String> closingList=List.of(")","}","]");
@@ -39,7 +39,7 @@ public class CheckOpeningClosingBracketsBalanced {
         openingClosing.put("(",")");
         openingClosing.put("{","}");
         openingClosing.put("[","]");
-      
+
         Stack<String> openingValueStack = new Stack<>(inputs.size());
         for(String ch:inputs){
             // if letter is opening ([{ pushed to stack
@@ -52,11 +52,11 @@ public class CheckOpeningClosingBracketsBalanced {
                 if(!openingValueStack.isEmpty()) {
                     String Closing = openingClosing.get(openingValueStack.pop());
                     if (!ch.equals(Closing)) {
-                        return "false";
+                        return false;
                     }
                 }
                 else {
-                    return "false";
+                    return false;
                 }
             }
         }
@@ -65,10 +65,10 @@ public class CheckOpeningClosingBracketsBalanced {
         then the string parenthesis are balanced
          */
         if( openingValueStack.isEmpty()){
-            return "true";
+            return true;
         }
         else{
-            return "false";
+            return true;
         }
     }
 }
