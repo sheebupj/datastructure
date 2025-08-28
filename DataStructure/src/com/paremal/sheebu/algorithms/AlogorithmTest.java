@@ -68,14 +68,14 @@ public class AlogorithmTest {
     @Test
     public void NumberOfNotesFromAmtTest() {
         Integer amount = 2888;
-        Map<Integer, Integer> notesMap = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(2888);
-        Assert.assertArrayEquals(getepectedNotesMap().entrySet().toArray(), notesMap.entrySet().toArray());
+        Map<Integer, Integer> notesMap2888 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(2888);
+        Assert.assertArrayEquals(getepectedNotesMap2888().entrySet().toArray(), notesMap2888.entrySet().toArray());
         Map<Integer, Integer> notesMapWithStream = NumberOfNotesFromAmt.getNumberOfNotesFrAmtStream(2888);
-        Assert.assertArrayEquals(getepectedNotesMap().entrySet().toArray(), notesMapWithStream.entrySet().toArray());
-        Map<Integer, Integer> notesMap1 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(5888);
-        Assert.assertArrayEquals(getepectedNotesMap1().entrySet().toArray(), notesMap1.entrySet().toArray());
+        Assert.assertArrayEquals(getepectedNotesMap2888().entrySet().toArray(), notesMapWithStream.entrySet().toArray());
+        Map<Integer, Integer> notesMap15888 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(5888);
+        Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap15888.entrySet().toArray());
         Map<Integer, Integer> notesMap1Stream = NumberOfNotesFromAmt.getNumberOfNotesFrAmtStream(5888);
-        Assert.assertArrayEquals(getepectedNotesMap1().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
+        Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
 
     }
     @Test
@@ -122,7 +122,7 @@ public class AlogorithmTest {
         Assert.assertFalse(actual7_);
     }
 
-    private static Map<Integer, Integer> getepectedNotesMap() {
+    private static Map<Integer, Integer> getepectedNotesMap2888() {
         Map<Integer, Integer> expected = new LinkedHashMap<>();
         expected.put(2000, 1);
         expected.put(500, 1);
@@ -137,7 +137,7 @@ public class AlogorithmTest {
         return expected;
     }
 
-    private static Map<Integer, Integer> getepectedNotesMap1() {
+    private static Map<Integer, Integer> getepectedNotesMap5888() {
         Map<Integer, Integer> expected = new LinkedHashMap<>();
         expected.put(2000, 2);
         expected.put(500, 3);
