@@ -72,8 +72,8 @@ public class AlogorithmTest {
         Assert.assertArrayEquals(getepectedNotesMap2888().entrySet().toArray(), notesMap2888.entrySet().toArray());
         Map<Integer, Integer> notesMapWithStream = NumberOfNotesFromAmt.getNumberOfNotesFrAmtStream(2888);
         Assert.assertArrayEquals(getepectedNotesMap2888().entrySet().toArray(), notesMapWithStream.entrySet().toArray());
-        Map<Integer, Integer> notesMap15888 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(5888);
-        Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap15888.entrySet().toArray());
+        Map<Integer, Integer> notesMap5888 = NumberOfNotesFromAmt.getNumberOfNotesFrAmt(5888);
+        Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap5888.entrySet().toArray());
         Map<Integer, Integer> notesMap1Stream = NumberOfNotesFromAmt.getNumberOfNotesFrAmtStream(5888);
         Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
 
