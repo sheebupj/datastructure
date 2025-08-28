@@ -92,6 +92,7 @@ public class AlogorithmTest {
         String line5_="()([])}([])}";//false
         String line6="()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//true
         String line6_=")()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
+        String line7_="(()()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
 
         boolean actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
         Assert.assertTrue(actual);
@@ -117,6 +118,8 @@ public class AlogorithmTest {
         Assert.assertTrue(actual6);
         boolean actual6_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6_);
         Assert.assertFalse(actual6_);
+        boolean actual7_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line7_);
+        Assert.assertFalse(actual7_);
     }
 
     private static Map<Integer, Integer> getepectedNotesMap() {
