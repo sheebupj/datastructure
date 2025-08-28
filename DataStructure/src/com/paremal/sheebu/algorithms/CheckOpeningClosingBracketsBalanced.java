@@ -13,11 +13,26 @@ public class CheckOpeningClosingBracketsBalanced {
 
     public static void main(String[] argh) {
 
-        Scanner sc = new Scanner(System.in);
+
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
+        int nolines=0,readcout=0;
+        try {
+              nolines=Integer.valueOf(reader.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+       while(readcout<nolines){
 
-        reader.lines().map(CheckOpeningClosingBracketsBalanced::checkBalancedWithStack).forEach(System.out::println);
 
+           try {
+               boolean result=checkBalancedWithStack(reader.readLine().trim());
+               System.out.println(result);
+               readcout++;
+           } catch (IOException e) {
+               throw new RuntimeException(e);
+           }
+
+       }
 
     }
 
@@ -68,7 +83,7 @@ public class CheckOpeningClosingBracketsBalanced {
             return true;
         }
         else{
-            return true;
+            return false;
         }
     }
 }
