@@ -23,8 +23,10 @@ public class PrintDuplicateCharFromWord {
         stringIntegerMap.entrySet().stream().filter(entry-> entry.getValue()>1).forEach(System.out::println);
     }
     public static void printDuplicateFromStringJava8(String str) {
-        Map<String,Integer>  stringIntegerMap=Arrays.stream(str.split("")).collect(Collectors.toMap(Function.identity(),v->1,Integer::sum));
-        stringIntegerMap.entrySet().stream().filter(m-> m.getValue()>1).forEach(set->System.out.println("Duplicate "+set.getKey()+" Frequency:"+set.getValue()));
+        Map<String,Integer>  stringIntegerMap=Arrays.stream(str.split(""))
+                .collect(Collectors.toMap(Function.identity(),v->1,Integer::sum));
+        stringIntegerMap.entrySet().stream().filter(m-> m.getValue()>1)
+                .forEach(set->System.out.println("Duplicate "+set.getKey()+" Frequency:"+set.getValue()));
     }
     public static Boolean printWheatherAnagramOfNot(String word1,String word2){
         if(word1.length()!=word2.length()){

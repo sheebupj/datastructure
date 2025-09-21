@@ -3,10 +3,7 @@ package com.paremal.sheebu.algorithms;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class AlogorithmTest {
 
@@ -51,6 +48,20 @@ public class AlogorithmTest {
         Assert.assertArrayEquals(new int[]{-1, 0}, result3);
         int[] result4 = ClosestZeroInArray.findClosestToZeroUsingStreamApi(data1);
         Assert.assertArrayEquals(new int[]{-1, 0}, result4);
+    }
+    @Test
+    public void testFindCharPosistions(){
+        String str="The graphic and.";
+        List<Integer> expected= Arrays.asList(12);
+        FindStringPositionsInSentence fInstance=new FindStringPositionsInSentence();
+        List<Integer> actual=fInstance.findWordPositions(str,"and");
+        String str1="The graphic and and andand";
+        List<Integer> expected1= Arrays.asList(12, 16, 20, 23);
+        List<Integer> actual1=fInstance.findWordPositions(str1,"and");
+
+
+        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected1,actual1);
     }
 
     @Test

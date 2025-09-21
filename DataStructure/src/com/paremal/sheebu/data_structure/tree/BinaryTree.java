@@ -24,7 +24,7 @@ public class BinaryTree {
         root = insertData(root, key);
     }
 
-    // A Dataursive function to insert a new key in BST
+    // A Recursive function to insert a new key in BST
     private Node insertData(Node root, int key) {
         // If the tree is empty, return a new node
         if (root == null) {
