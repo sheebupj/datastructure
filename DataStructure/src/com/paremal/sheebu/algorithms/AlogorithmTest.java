@@ -49,19 +49,20 @@ public class AlogorithmTest {
         int[] result4 = ClosestZeroInArray.findClosestToZeroUsingStreamApi(data1);
         Assert.assertArrayEquals(new int[]{-1, 0}, result4);
     }
+
     @Test
-    public void testFindCharPosistions(){
-        String str="The graphic and.";
-        List<Integer> expected= Arrays.asList(12);
-        FindStringPositionsInSentence fInstance=new FindStringPositionsInSentence();
-        List<Integer> actual=fInstance.findWordPositions(str,"and");
-        String str1="The graphic and and andand";
-        List<Integer> expected1= Arrays.asList(12, 16, 20, 23);
-        List<Integer> actual1=fInstance.findWordPositions(str1,"and");
+    public void testFindCharPosistions() {
+        String str = "The graphic and.";
+        List<Integer> expected = Arrays.asList(12);
+        FindStringPositionsInSentence fInstance = new FindStringPositionsInSentence();
+        List<Integer> actual = fInstance.findWordPositions(str, "and");
+        String str1 = "The graphic and and andand";
+        List<Integer> expected1 = Arrays.asList(12, 16, 20, 23);
+        List<Integer> actual1 = fInstance.findWordPositions(str1, "and");
 
 
-        Assert.assertEquals(expected,actual);
-        Assert.assertEquals(expected1,actual1);
+        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(expected1, actual1);
     }
 
     @Test
@@ -89,47 +90,48 @@ public class AlogorithmTest {
         Assert.assertArrayEquals(getepectedNotesMap5888().entrySet().toArray(), notesMap1Stream.entrySet().toArray());
 
     }
-    @Test
-    public void checkBalancedWithStackTest(){
-        String line="()";//true
-        String line_=")(";//false
-        String line2="([])";//true
-        String line2_="([)]";//false
-        String line4="()([])";//true
-        String line3="({([])})";//true
-        String line3_="({([])))";//false
-        String line5="()([]){([])}";//true
-        String line4_="))([])";//false
-        String line5_="()([])}([])}";//false
-        String line6="()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//true
-        String line6_=")()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
-        String line7_="(()()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
 
-        boolean actual=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
+    @Test
+    public void checkBalancedWithStackTest() {
+        String line = "()";//true
+        String line_ = ")(";//false
+        String line2 = "([])";//true
+        String line2_ = "([)]";//false
+        String line4 = "()([])";//true
+        String line3 = "({([])})";//true
+        String line3_ = "({([])))";//false
+        String line5 = "()([]){([])}";//true
+        String line4_ = "))([])";//false
+        String line5_ = "()([])}([])}";//false
+        String line6 = "()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//true
+        String line6_ = ")()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
+        String line7_ = "(()()([])([{}])()(){}[]{[]}[][][]{}{}{}{}()()(){{{}}}";//false
+
+        boolean actual = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line);
         Assert.assertTrue(actual);
-        boolean actual1=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
+        boolean actual1 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line_);
         Assert.assertFalse(actual1);
-        boolean actual2=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
+        boolean actual2 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2);
         Assert.assertTrue(actual2);
-        boolean actual2_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
+        boolean actual2_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line2_);
         Assert.assertFalse(actual2_);
-        boolean actual4=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
+        boolean actual4 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4);
         Assert.assertTrue(actual4);
-        boolean actual4_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
+        boolean actual4_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line4_);
         Assert.assertFalse(actual4_);
-        boolean actual5=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
+        boolean actual5 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5);
         Assert.assertTrue(actual5);
-        boolean actual3=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3);
+        boolean actual3 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3);
         Assert.assertTrue(actual3);
-        boolean actual3_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3_);
+        boolean actual3_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line3_);
         Assert.assertFalse(actual3_);
-        boolean actual5_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
+        boolean actual5_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line5_);
         Assert.assertFalse(actual5_);
-        boolean actual6=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6);
+        boolean actual6 = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6);
         Assert.assertTrue(actual6);
-        boolean actual6_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6_);
+        boolean actual6_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line6_);
         Assert.assertFalse(actual6_);
-        boolean actual7_=CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line7_);
+        boolean actual7_ = CheckOpeningClosingBracketsBalanced.checkBalancedWithStack(line7_);
         Assert.assertFalse(actual7_);
     }
 
@@ -162,14 +164,42 @@ public class AlogorithmTest {
         expected.put(1, 1);
         return expected;
     }
+
     @Test
-    public void testFirstNonRepeatableChars(){
-        List<String> wordList=List.of("absolute","definite","accomodate","sofistication");
-        String expected="admf";
-        CombinedFirstNonRepeatableCharsFromWords cfnc= new CombinedFirstNonRepeatableCharsFromWords();
-        String actual=cfnc.combinedNonRepeatable(wordList);
-        Assert.assertEquals(expected,actual);
+    public void testFirstNonRepeatableChars() {
+        List<String> wordList = List.of("absolute", "definite", "accomodate", "sofistication");
+        String expected = "admf";
+        CombinedFirstNonRepeatableCharsFromWords cfnc = new CombinedFirstNonRepeatableCharsFromWords();
+        String actual = cfnc.combinedNonRepeatable(wordList);
+        Assert.assertEquals(expected, actual);
 
     }
 
+    @Test
+    public void testLongestStringWithoutVowels() {
+        String[] words = {"ada",
+                "xyz",
+                "absolute",
+                "arithmetic1",
+                "bcdfghjklm",
+                "aithmatic-expression"};
+        String[] words1 = {
+                "ada",
+                "xyz",
+                "absolute",
+                "arithmetic1",
+                "bcdfghjklm",
+                "aithmatic-expression",
+                "bcdfghjklmww"
+        };
+
+        String expected = "bcdfghjklm";
+        LongestWithoutVowel longestWithoutVowel = new LongestWithoutVowel();
+        String actual = longestWithoutVowel.findLongestStringWithoutvowels(words);
+        Assert.assertEquals(expected,actual);
+        String expected1 = "bcdfghjklmww";
+        String actual1 = longestWithoutVowel.findLongestStringWithoutvowels(words1);
+        Assert.assertEquals(expected1,actual1);
+
+    }
 }
