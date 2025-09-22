@@ -162,5 +162,14 @@ public class AlogorithmTest {
         expected.put(1, 1);
         return expected;
     }
+    @Test
+    public void testFirstNonRepeatableChars(){
+        List<String> wordList=List.of("absolute","definite","accomodate","sofistication");
+        String expected="admf";
+        CombinedFirstNonRepeatableCharsFromWords cfnc= new CombinedFirstNonRepeatableCharsFromWords();
+        String actual=cfnc.combinedNonRepeatable(wordList);
+        Assert.assertEquals(expected,actual);
+
+    }
 
 }
