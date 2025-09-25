@@ -202,4 +202,25 @@ public class AlogorithmTest {
         Assert.assertEquals(expected1,actual1);
 
     }
+    @Test
+    public void testFrequencyRankingFromTo1(){
+        Integer[] ints={1,3,6,4,2,1,9,3,5,1,8,3,8,5,6,3,2,0,6,4,2,7,9,3,2,1};
+        FrequencyRanking ranking= new FrequencyRanking();
+        Map<Integer,Integer> expected=new LinkedHashMap<>();
+        expected.put(1,4);
+        expected.put(2,4);
+        expected.put(6,3);
+        Map<Integer,Integer> actual=ranking.frequencyRankingFromTo(ints,2,3);
+        Assert.assertEquals(expected,actual);
+        Integer[] ints1={0,1,2,3,4,5,6,0,1,0,2,0,1,0,5,1,0,2,4};
+        Map<Integer,Integer> expected1=new LinkedHashMap<>();
+        expected1.put(0,6);
+        expected1.put(1,4);
+        expected1.put(2,3);
+        //expected1.put(5,2);
+        expected1.put(4,2);
+        Map<Integer,Integer> actual1=ranking.frequencyRankingFromTo(ints1,1,4);
+        Assert.assertEquals(expected1,actual1);
+
+    }
 }
