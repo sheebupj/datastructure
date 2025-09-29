@@ -223,4 +223,41 @@ public class AlogorithmTest {
         Assert.assertEquals(expected1,actual1);
 
     }
+    @Test
+    public void testFlipRotateTest(){
+        List<List<Integer>> inputLList= new ArrayList<>();
+        inputLList.add(Arrays.asList(1,2,3));
+        inputLList.add(Arrays.asList(4,5,6));
+        inputLList.add(Arrays.asList(7,8,9));
+
+        List<List<Integer>> expected= new ArrayList<>();
+        expected.add(Arrays.asList(7,4,1));
+        expected.add(Arrays.asList(8,5,2));
+        expected.add(Arrays.asList(9,6,3));
+
+        List<List<Integer>> actual= FlipRotate.rotateClockWise(inputLList);
+        Assert.assertEquals(expected,actual);
+
+        List<List<Integer>> expectedAntiCwise= new ArrayList<>();
+        expectedAntiCwise.add(Arrays.asList(3,6,9));
+        expectedAntiCwise.add(Arrays.asList(2,5,8));
+        expectedAntiCwise.add(Arrays.asList(1,4,7));
+
+        List<List<Integer>> actualAntiClwise= FlipRotate.rotateAntiClockWise(inputLList);
+        Assert.assertEquals(expectedAntiCwise,actualAntiClwise);
+
+        List<List<Integer>> expectedHrzdFlip= new ArrayList<>();
+        expectedHrzdFlip.add(Arrays.asList(3,2,1));
+        expectedHrzdFlip.add(Arrays.asList(6,5,4));
+        expectedHrzdFlip.add(Arrays.asList(9,8,7));
+        List<List<Integer>> actualHrzdFlip= FlipRotate.horizondalFlip(inputLList);
+        Assert.assertEquals(expectedHrzdFlip,actualHrzdFlip);
+
+        List<List<Integer>> expectedVerticalFlip= new ArrayList<>();
+        expectedVerticalFlip.add(Arrays.asList(7,8,9));
+        expectedVerticalFlip.add(Arrays.asList(4,5,6));
+        expectedVerticalFlip.add(Arrays.asList(1,2,3));
+        List<List<Integer>> actualVerticalFlip= FlipRotate.verticalFlip(inputLList);
+        Assert.assertEquals(expectedVerticalFlip,actualVerticalFlip);
+    }
 }

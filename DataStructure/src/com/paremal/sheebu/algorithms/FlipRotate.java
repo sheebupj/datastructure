@@ -50,17 +50,14 @@ after flipping  vertically
 public class FlipRotate {
     public static void main(String[] args) {
 
-        List<Integer> a = List.of(20,21,22,23);
-        List<Integer> b = List.of(24,25,26,27);
-        List<Integer> c = List.of(28,29,30,31);
-        List<Integer> d = List.of(32,33,34,35);
+
 
 
         List<List<Integer>> llist = new ArrayList<>();
-        llist.add(a);
-        llist.add(b);
-        llist.add(c);
-        llist.add(d);
+        llist.add(Arrays.asList(1,2,3));
+        llist.add(Arrays.asList(4,5,6));
+        llist.add(Arrays.asList(7,8,9));
+
         llist.stream().forEach(System.out::println);
 
         Integer[][] IntArr2d = llist.stream().map(l -> l.stream().toArray(Integer[]::new)).toArray(Integer[][]::new);
@@ -70,33 +67,19 @@ public class FlipRotate {
         List<List<Integer>> rlist = rotateClockWise(llist);
         System.out.println("after rotating clockwise 90 degree");
         display(rlist);
-        List<List<Integer>> rlist2 = rotateClockWise(rlist);
-        System.out.println("after rotating clockwise 90 degree");
-        display(rlist2);
-        List<List<Integer>> rlist3 = rotateClockWise(rlist2);
-        System.out.println("after rotating clockwise 90 degree");
-        display(rlist3);
-        List<List<Integer>> rlist4 = rotateClockWise(rlist3);
-        System.out.println("after rotating clockwise 90 degree");
-        display(rlist4);
-        List<List<Integer>> rlist5 = rotateAntiClockWise(rlist4);
+
+        List<List<Integer>> rlist5 = rotateAntiClockWise(llist);
         System.out.println("After rotating anti-clockwise 90 degree");
         display(rlist5);
-        List<List<Integer>> rlist5a = rotateClockWise(rlist5);
-        System.out.println("after rotating clockwise 90 degree");
-        display(rlist5a);
-        List<List<Integer>> rlist6 = horizondalFlip(rlist5a);
+
+        List<List<Integer>> rlist6 = horizondalFlip(llist);
         System.out.println("after flipping horizontally");
           display(rlist6);
-        List<List<Integer>> rlist6a = horizondalFlip(rlist6);
-        System.out.println("after flipping horizontally");
-        display(rlist6a);
-        List<List<Integer>> rlist7 = verticalFlip(rlist6a);
+
+        List<List<Integer>> rlist7 = verticalFlip(llist);
         System.out.println("after flipping  vertically");
         display(rlist7);
-        List<List<Integer>> rlist7a = verticalFlip(rlist7);
-        System.out.println("after flipping  vertically");
-        display(rlist7a);
+
 
 
     }

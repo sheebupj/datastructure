@@ -26,6 +26,6 @@ public class LongestWithoutVowel {
             Matcher matcher= pattern.matcher(w);
             return !matcher.find()? true:false;
         }).reduce((w1,w2)-> w1.length()>w2.length() ? w1:w2);
-        return result.isPresent() ? result.get():"";
+        return result.orElse("");
     }
 }
